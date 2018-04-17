@@ -13,7 +13,6 @@ public class PageObjectManager {
     private CartPage cartPage;
     private HomePage homePage;
     private CheckoutPage checkoutPage;
-    // private ConfirmationPage confirmationPage;
 
     public PageObjectManager(WebDriver driver) {
         this.driver = driver;

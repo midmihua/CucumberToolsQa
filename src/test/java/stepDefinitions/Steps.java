@@ -3,33 +3,35 @@ package stepDefinitions;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import dataProvider.ConfigFileReader;
+import managers.FileReaderManager;
 import managers.PageObjectManager;
+import managers.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import pageObjects.CartPage;
 import pageObjects.CheckoutPage;
 import pageObjects.HomePage;
 import pageObjects.ProductListingPage;
 
+@Deprecated
 public class Steps {
+/***
     WebDriver driver;
-
     HomePage homePage;
     ProductListingPage productListingPage;
     CartPage cartPage;
     CheckoutPage checkoutPage;
-
     PageObjectManager pageObjectManager;
+    WebDriverManager webDriverManager;
 
     @Given("^user is on Home Page$")
     public void user_is_on_Home_Page(){
-        driver = new FirefoxDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        webDriverManager = new WebDriverManager();
+        driver = webDriverManager.getDriver();
         pageObjectManager = new PageObjectManager(driver);
         homePage = pageObjectManager.getHomePage();
         homePage.navigateTo_HomePage();
@@ -76,7 +78,7 @@ public class Steps {
     public void place_the_order() throws InterruptedException {
         checkoutPage.check_TermsAndCondition(true);
         checkoutPage.clickOn_PlaceOrder();
-
-        driver.quit();
+        webDriverManager.closeDriver();
     }
+***/
 }
