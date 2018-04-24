@@ -138,6 +138,9 @@ public class CheckoutPage {
 
     public void clickOn_PlaceOrder() {
         btn_PlaceOrder.submit();
+
+        Wait.untilJqueryIsDone(driver);
+        Wait.untilPageLoadComplete(driver);
     }
 
 
